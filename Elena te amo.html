@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Para Mi Princesa Elena</title>
+
+<style>
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #ffe6f0, #f8dfff, #e6ccff);
+    font-family: Arial, sans-serif;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+h1 {
+    margin-top: 40px;
+    font-size: 38px;
+    color: #b30086;
+}
+
+.subtitle {
+    color: #800060;
+    margin-bottom: 40px;
+}
+
+/* GALERÍA CORAZONES */
+.galeria {
+    position: relative;
+    width: 100%;
+    height: 650px;
+}
+
+.heart-photo {
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    clip-path: path("M 90 160 C 20 100, 0 60, 45 30 C 70 10, 90 30, 90 45 C 90 30, 110 10, 135 30 C 180 60, 160 100, 90 160 Z");
+    transition: transform 0.4s ease;
+}
+
+.heart-photo:hover {
+    transform: scale(1.15);
+}
+
+.foto1 { top: 60px; left: 8%; }
+.foto2 { top: 220px; left: 65%; }
+.foto3 { top: 420px; left: 25%; }
+.foto4 { top: 120px; left: 80%; }
+
+.container {
+    max-width: 900px;
+    margin: auto;
+    display: grid;
+    gap: 15px;
+    margin-top: 50px;
+}
+
+.card {
+    background: white;
+    padding: 15px;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(179,0,134,0.15);
+}
+
+.heart { color: #ff4d6d; }
+
+footer {
+    margin: 60px 0;
+    font-size: 22px;
+    color: #b30086;
+}
+</style>
+</head>
+
+<body>
+
+<h1>100 Razones Por Las Que Amo a Mi Princesa Elena 👑</h1>
+<p class="subtitle">Porque no eres solo mi novia… eres mi reina.</p>
+
+<div class="galeria">
+    <img src="foto1.jpg" class="heart-photo foto1">
+    <img src="foto2.jpg" class="heart-photo foto2">
+    <img src="foto3.jpg" class="heart-photo foto3">
+    <img src="foto4.jpg" class="heart-photo foto4">
+</div>
+
+<div class="container" id="reasons"></div>
+
+<footer>
+Siempre serás mi amor eterno ✨
+</footer>
+
+<script>
+const reasons = [
+"Porque tu sonrisa ilumina mis días",
+"Porque anhelo tus abrazos son mi lugar favorito",
+"Porque siempre sabes cómo hacerme reír",
+"Porque tu mirada incluso en fotos me da paz",
+"Porque eres increíblemente inteligente",
+"Porque apoyas mis sueños",
+"Porque confías en mí",
+"Porque tu voz me tranquiliza (como la mia a ti ASJKDHASJKA)",
+"Porque eres dulce",
+"Porque eres fuerte",
+"Porque eres auténtica",
+"Porque contigo todo es mejor",
+"Porque me inspiras a ser mejor persona",
+"Porque tienes el corazón más hermoso",
+"Porque tu risa es contagiosa",
+"Porque me entiendes sin palabras",
+"Porque siempre estás cuando te necesito",
+"Porque haces especiales los momentos simples",
+"Porque amo nuestras conversaciones",
+"Porque me encanta cómo me miras",
+"Porque eres todo lo que quiero",
+"Porque me haces sentir amado",
+"Porque tu cariño es sincero",
+"Porque eres valiente",
+"Porque nunca te rindes",
+"Porque tienes sueños hermosos",
+"Porque eres paciente conmigo",
+"Porque te sobrepreocupas de mi hasta cuando no debes",
+"Porque me motivas",
+"Porque tu ternura me derrite (mi ternurucha)",
+"Porque contigo me siento en casa",
+"Porque me haces sentir seguro",
+"Porque tu felicidad es importante para mí",
+"Porque tienes una energía preciosa",
+"Porque eres única",
+"Porque amo tus detalles",
+"Porque tu forma de amar es pura",
+"Porque me haces creer en el amor",
+"Porque eres mi compañera perfecta",
+"Porque compartimos",
+"Porque tus besos se convirtieron en mi meta",
+"Porque me haces sentir especial",
+"Porque eres comprensiva",
+"Porque siempre intentas mejorar",
+"Porque confío plenamente en ti",
+"Porque me haces reír incluso en días malos",
+"Porque tienes una mirada sincera",
+"Porque amo tu forma de pensar",
+"Porque me haces sentir orgullo",
+"Porque eres hermosa por dentro y por fuera",
+"Porque siempre encuentras lo bueno",
+"Porque me escuchas",
+"Porque eres detallista",
+"Porque haces latir fuerte mi corazón (mi sangre roja y mi corazon en la izquierda)",
+"Porque cada día contigo es especial",
+"Porque me aceptas como soy",
+"Porque eres mi apoyo",
+"Porque me haces sentir importante",
+"Porque tus palabras me reconfortan",
+"Porque tu cariño es mi refugio",
+"Porque amo tu forma de abrazar",
+"Porque me haces sonreír sin razón",
+"Porque compartimos sueños",
+"Porque eres leal",
+"Porque me haces sentir completo",
+"Porque tu presencia me calma",
+"Porque contigo el tiempo vuela",
+"Porque amo tu alma y espiritu",
+"Porque estaran Dante y Violeta",
+"Porque siempre aprendo algo contigo",
+"Porque me haces feliz",
+"Porque eres mi persona favorita",
+"Porque tu amor es real",
+"Porque siempre buscas lo mejor",
+"Porque tu mirada me enamora",
+"Porque eres cariñosa",
+"Porque haces que todo tenga sentido",
+"Porque me das fuerzas(y me haces cursi)",
+"Porque eres mi inspiración",
+"Porque tu ternura es infinita",
+"Porque me haces sentir suerte",
+"Porque amo tu forma de ser",
+"Porque eres maravillosa",
+"Porque me haces sentir vivo",
+"Porque tu corazón es gigante",
+"Porque amo estar en tu camino y que me eligieras para tal",
+"Porque tus palabras me llenan",
+"Porque siempre estás dispuesta a escuchar",
+"Porque eres mi calma",
+"Porque me haces sentir paz",
+"Porque contigo aprendí lo que es amar",
+"Porque me haces creer en nosotros",
+"Porque cada día me enamoro más",
+"Porque eres mi amor eterno",
+"Porque no cambiaría nada de ti",
+"Porque simplemente eres tú",
+"Porque amo todo lo que eres",
+"Porque eres mi preciosa princesa Elena"
+];
+
+const container = document.getElementById("reasons");
+
+reasons.forEach((reason, index) => {
+  const card = document.createElement("div");
+  card.className = "card";
+  card.innerHTML = `<span class='heart'>❤</span> ${index + 1}. ${reason}`;
+  container.appendChild(card);
+});
+</script>
+
+</body>
+</html>
